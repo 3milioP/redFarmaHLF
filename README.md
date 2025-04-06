@@ -82,12 +82,12 @@ export FABRIC_CFG_PATH=${PWD}/../fabric-samples/config
 ```
 docker-compose -f docker/docker-compose-farma.yaml up -d
 ```
-## **Sobrescribir el ```configtx``` y Exportar el PATH**
+## **Sobrescribir el ```configtx``` y Exportar el ```PATH```**
 ```
 cp configtx/configtxFarma.yaml configtx/configtx.yaml
 export FABRIC_CFG_PATH=${PWD}/configtx
 ```
-## **Levantar los 2 Canales**
+## **Levantar los dos Canales**
 ```
 configtxgen -profile FarmaApplicationGenesis -outputBlock ./channel-artifacts/farmaapplicationchannel.block -channelID farmaapplicationchannel
 configtxgen -profile VentasGenesis -outputBlock ./channel-artifacts/ventaschannel.block -channelID ventaschannel
@@ -136,7 +136,7 @@ export CORE_PEER_ADDRESS=localhost:2051
 peer channel join -b ./channel-artifacts/farmaapplicationchannel.block
 ```
 
-### ** Dos Nodos en el Canal ventaschannel ```ventaschannel```
+### ** Dos Nodos en el Canal ```ventaschannel```
 ```
 # Moderno Peer0
 export PEER0_MODERNO_CA=${PWD}/organizations/peerOrganizations/moderno.farma.com/peers/peer0.moderno.farma.com/tls/ca.crt
@@ -162,7 +162,7 @@ export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/delivery.f
 export CORE_PEER_ADDRESS=localhost:2051
 peer channel join -b ./channel-artifacts/ventaschannel.block
 ```
-## **Instalar Chaincode de Trazabilidad en los Tres Peers y el de Ventas Solo en el Peer Moderno y Peer Delivery**
+## **Instalar Chaincode de Trazabilidad en los Cuatro Peers y el de Ventas Solo en los Peers de Moderno y el Peer de Delivery**
 ```
 # Empaquetado del código
 peer lifecycle chaincode package chaintrazabilidad.tar.gz --path ./chaincodes/farma/trazabilidad/go/ --lang golang --label trazabilidad_1
