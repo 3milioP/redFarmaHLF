@@ -55,8 +55,8 @@ git checkout master
 ```
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
-docker volume prune
-docker network prune
+docker volume prune -f
+docker network prune -f
 rm -rf organizations/peerOrganizations
 rm -rf organizations/ordererOrganizations
 rm -rf channel-artifacts/
