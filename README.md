@@ -97,7 +97,7 @@ configtxgen -profile VentasGenesis -outputBlock ./channel-artifacts/ventaschanne
 export FABRIC_CFG_PATH=${PWD}/../fabric-samples/config
 export ORDERER_CA=${PWD}/organizations/ordererOrganizations/farma.com/orderers/orderer.farma.com/msp/tlscacerts/tlsca.farma.com-cert.pem
 export ORDERER_ADMIN_TLS_SIGN_CERT=${PWD}/organizations/ordererOrganizations/farma.com/orderers/orderer.farma.com/tls/server.crt
-export ORDERER_ADMIN_TLS
+export ORDERER_ADMIN_TLS_PRIVATE_KEY=${PWD}/organizations/ordererOrganizations/farma.com/orderers/orderer.farma.com/tls/server.key
 ```
 ## **Añadir los Nodos de Cada Organización a los Canales**
 
